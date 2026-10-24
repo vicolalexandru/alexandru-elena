@@ -52,17 +52,17 @@ const EventDetailsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <div className="relative overflow-hidden aspect-[16/9] min-h-[240px]">
+          <div className="relative -mx-6 overflow-hidden md:mx-0 md:aspect-[16/9] md:min-h-[320px]">
             <img
               src={venueImage}
               alt={t("details.venueAlt")}
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="h-auto w-full md:absolute md:inset-0 md:h-full md:object-cover md:object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1d3344]/55 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)]">
-              <h3 className="font-serif text-3xl md:text-4xl font-light mb-1">
+            <div className="absolute bottom-4 left-4 right-4 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)] md:bottom-8 md:left-8 md:right-8">
+              <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light mb-1">
                 {t("details.venueName")}
               </h3>
               <p className="font-sans text-sm md:text-base font-light mb-3 text-white/90">
