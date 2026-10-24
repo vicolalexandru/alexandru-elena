@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Project site: https://vicolalexandru.github.io/alexandru-elena.github.io/
+  // Project site: https://vicolalexandru.github.io/alexandru-elena/
   // Dev stays at "/" so `npm run dev` is unchanged.
-  base: mode === "production" ? "/alexandru-elena.github.io/" : "/",
+  base: mode === "production" ? "/alexandru-elena/" : "/",
 }));
