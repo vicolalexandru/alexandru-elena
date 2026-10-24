@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#f7f3ee"/>
+  <rect x="36" y="36" width="728" height="448" fill="#fffdf9" stroke="#e4d7cf" stroke-width="2"/>
+  <path d="M36 36 L400 280 L764 36" fill="none" stroke="#eadfd6" stroke-width="2"/>
+  <path d="M36 484 L300 250" fill="none" stroke="#eadfd6" stroke-width="2"/>
+  <path d="M764 484 L500 250" fill="none" stroke="#eadfd6" stroke-width="2"/>
+  <circle cx="400" cy="250" r="78" fill="#8d3b45"/>
+  <circle cx="400" cy="250" r="64" fill="none" stroke="#f3d6c8" stroke-width="2"/>
+  <text x="400" y="262" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#fff8f4" letter-spacing="2">A &amp; E</text>
+</svg>

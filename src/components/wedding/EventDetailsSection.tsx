@@ -1,0 +1,142 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { MapPin, Clock, CalendarDays, Map, ArrowRight, Shirt } from "lucide-react";
+import venueImage from "@/assets/lago-hall.jpg";
+import { useTranslation } from "@/i18n/LanguageContext";
+
+const EventDetailsSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t } = useTranslation();
+
+  const events = [
+    {
+      title: t("details.ceremony.title"),
+      time: t("details.ceremony.time"),
+      description: t("details.ceremony.desc"),
+      icon: CalendarDays,
+    },
+    {
+      title: t("details.cocktail.title"),
+      time: t("details.cocktail.time"),
+      description: t("details.cocktail.desc"),
+      icon: Clock,
+    },
+    {
+      title: t("details.reception.title"),
+      time: t("details.reception.time"),
+      description: t("details.reception.desc"),
+      icon: MapPin,
+    },
+  ];
+
+  return (
+    <section ref={ref} id="details" className="py-16 md:py-24 px-6 md:px-12 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <p className="decorative-flourish mb-4">✦</p>
+          <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
+            {t("details.title")}
+          </h2>
+          <div className="decorative-line" />
+        </motion.div>
+
+        {/* Venue Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-16"
+        >
+          <div className="relative overflow-hidden aspect-[16/9] min-h-[240px]">
+            <img
+              src={venueImage}
+              alt={t("details.venueAlt")}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1d3344]/55 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.55)]">
+              <h3 className="font-serif text-3xl md:text-4xl font-light mb-1">
+                {t("details.venueName")}
+              </h3>
+              <p className="font-sans text-sm md:text-base font-light mb-3 text-white/90">
+                {t("details.venueHall")}
+              </p>
+              <div className="flex flex-col gap-3">
+                <motion.a
+                  href="https://www.google.com/maps/search/?api=1&query=Lago+Event+Park+Danceni+Chisinau"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-4 py-2 bg-white hover:bg-gray-100 rounded-full transition-colors duration-300 group shadow-lg self-start"
+                  aria-label="Open in Google Maps"
+                  animate={{
+                    x: [0, 5, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-foreground text-sm font-sans uppercase tracking-wide">{t("details.getDirections")}</span>
+                    <ArrowRight className="w-4 h-4 text-foreground group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <div className="w-px h-5 bg-gray-300" />
+                  <Map className="w-5 h-5 text-primary" />
+                </motion.a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Event Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {events.map((event, index) => (
+            <motion.div
+              key={event.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
+              className="text-center p-8 bg-card border border-border hover:border-primary transition-colors duration-300"
+            >
+              <event.icon className="w-8 h-8 text-primary mx-auto mb-4" />
+              <h3 className="font-serif text-2xl text-foreground mb-2">
+                {event.title}
+              </h3>
+              <p className="text-primary font-serif text-xl mb-4">{event.time}</p>
+              <p className="text-muted-foreground font-light text-sm leading-relaxed">
+                {event.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Dress Code */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center p-8 bg-card border border-border max-w-lg mx-auto"
+        >
+          <Shirt className="w-8 h-8 text-primary mx-auto mb-4" />
+          <h3 className="font-serif text-2xl text-foreground mb-2">
+            {t("details.dressCode")}
+          </h3>
+          <p className="text-primary font-serif text-xl mb-4">{t("details.dressCodeValue")}</p>
+          <p className="text-muted-foreground font-light text-sm leading-relaxed">
+            {t("details.dressCodeDesc")}
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default EventDetailsSection;
