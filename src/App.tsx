@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { LanguageProvider } from "./i18n/LanguageContext";
-import LanguageToggle from "./components/LanguageToggle";
 import Index from "./pages/Index";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
@@ -40,7 +39,6 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-            <LanguageToggle />
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>

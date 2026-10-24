@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Heart } from "lucide-react";
 import { useTranslation } from "@/i18n/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const FooterSection = () => {
   const ref = useRef(null);
@@ -33,12 +34,16 @@ const FooterSection = () => {
 
           <div className="space-y-2 text-muted-foreground font-sans text-sm font-light">
             <p>{t("footer.contact")}</p>
-            <p className="text-foreground">xela@gmail.com</p>
+            <p className="text-foreground">alexandru.vicol.94@gmail.com</p>
           </div>
 
           <p className="mt-8 text-xs text-muted-foreground font-sans tracking-wider">
             #AlexandruAndElena
           </p>
+
+          <div className="mt-8 flex justify-center">
+            <LanguageToggle />
+          </div>
         </motion.div>
       </div>
     </footer>

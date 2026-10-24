@@ -10,8 +10,10 @@ Your RSVP form is now configured to submit data to Google Sheets. Follow these s
 3. Name it something like "Alexandru & Elena Wedding RSVPs"
 4. In the first row, add these column headers (in this exact order):
 
-| name | email | phone | attending | essay | timestamp |
-|------|-------|-------|-----------|-------|-----------|
+| name | email | phone | attending | numberOfGuests | children | child1 | child2 | child3 | essay | timestamp |
+|------|-------|-------|-----------|----------------|----------|--------|--------|--------|-------|-----------|
+
+`children`, `child1`, `child2`, and `child3` come from the "Coming with children" section. That section is shown only when the guest is attending. `children` is `0` when they are not attending or did not check the box; otherwise it is `1`, `2`, or `3`. Each `child` column is that child's age band (`under7`, `7to12`, or `over12`), and unused columns stay blank.
 
 ## Step 2: Create Google Apps Script
 
@@ -29,11 +31,16 @@ function doPost(e) {
     const email = e.parameter.email || '';
     const phone = e.parameter.phone || '';
     const attending = e.parameter.attending || '';
+    const numberOfGuests = e.parameter.numberOfGuests || '';
+    const children = e.parameter.children || '0';
+    const child1 = e.parameter.child1 || '';
+    const child2 = e.parameter.child2 || '';
+    const child3 = e.parameter.child3 || '';
     const essay = e.parameter.essay || '';
     const timestamp = e.parameter.timestamp || new Date().toISOString();
 
     // Append row to sheet
-    sheet.appendRow([name, email, phone, attending, essay, timestamp]);
+    sheet.appendRow([name, email, phone, attending, numberOfGuests, children, child1, child2, child3, essay, timestamp]);
 
     return ContentService.createTextOutput(JSON.stringify({ status: 'success' }))
       .setMimeType(ContentService.MimeType.JSON);
@@ -87,7 +94,7 @@ function doPost(e) {
 ## Troubleshooting
 
 ### Form submits but data doesn't appear in sheet
-- Make sure your column headers match exactly: `name`, `email`, `phone`, `attending`, `essay`, `timestamp`
+- Make sure your column headers match exactly: `name`, `email`, `phone`, `attending`, `numberOfGuests`, `children`, `child1`, `child2`, `child3`, `essay`, `timestamp`
 - Check that the script is deployed as "Anyone" can access
 - Verify you copied the correct deployment URL
 
@@ -112,7 +119,10 @@ Each RSVP submission will create a new row with:
 - **email**: Guest's email address
 - **phone**: Guest's phone number
 - **attending**: Either "yes" or "no"
-- **essay**: Optional message from the guest
+- **numberOfGuests**: `1` or `2` when attending (including the guest), otherwise `0`
+- **children**: How many children are coming. `0` when the guest is not attending or did not check "Coming with children"; otherwise `1`, `2`, or `3`
+- **child1**, **child2**, **child3**: Age band for each child, in order. One of `under7` (Under 7), `7to12` (7–12), or `over12` (Over 12). Blank when that child was not included
+- **essay**: Optional message from the guest (required when declining)
 - **timestamp**: ISO 8601 timestamp of submission
 
 ## Privacy & Security
@@ -136,10 +146,15 @@ function doPost(e) {
     const email = e.parameter.email || '';
     const phone = e.parameter.phone || '';
     const attending = e.parameter.attending || '';
+    const numberOfGuests = e.parameter.numberOfGuests || '';
+    const children = e.parameter.children || '0';
+    const child1 = e.parameter.child1 || '';
+    const child2 = e.parameter.child2 || '';
+    const child3 = e.parameter.child3 || '';
     const essay = e.parameter.essay || '';
     const timestamp = e.parameter.timestamp || new Date().toISOString();
 
-    sheet.appendRow([name, email, phone, attending, essay, timestamp]);
+    sheet.appendRow([name, email, phone, attending, numberOfGuests, children, child1, child2, child3, essay, timestamp]);
 
     // Send email notification
     MailApp.sendEmail({
@@ -150,6 +165,11 @@ Name: ${name}
 Email: ${email}
 Phone: ${phone}
 Attending: ${attending}
+Number of guests: ${numberOfGuests}
+Children: ${children}
+Child 1: ${child1}
+Child 2: ${child2}
+Child 3: ${child3}
 Message: ${essay}
 Time: ${timestamp}
       `
@@ -167,10 +187,12 @@ Time: ${timestamp}
 ### Data Validation
 Add data validation to your Google Sheet columns to keep data clean:
 - **attending**: Data validation → List of items → "yes,no"
+- **children**: Data validation → List of items → "0,1,2,3"
+- **child1**, **child2**, **child3**: Data validation → List of items → "under7,7to12,over12"
 - **email**: Data validation → Text contains "@"
 
 ## Questions?
 If you run into issues, check that:
-1. Column headers are exactly: `name`, `email`, `phone`, `attending`, `essay`, `timestamp`
+1. Column headers are exactly: `name`, `email`, `phone`, `attending`, `numberOfGuests`, `children`, `child1`, `child2`, `child3`, `essay`, `timestamp`
 2. Apps Script is deployed with "Anyone" access
 3. The deployment URL is correctly pasted in `RSVPSection.tsx`

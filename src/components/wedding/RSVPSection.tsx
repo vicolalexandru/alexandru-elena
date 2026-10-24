@@ -4,8 +4,10 @@ import { useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "@/i18n/LanguageContext";
 
-const COUPLE_EMAIL = "xela@gmail.com";
 const CHILD_AGE_KEYS = ["under7", "7to12", "over12"] as const;
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycby1WlhZ9TqHitSVe7TC7Qj5fnI9MLvhwrj7viJWuh8IW8GsRHd76SyosyrJrWgn9qemaQ/exec";
 
 const RSVPSection = () => {
   const ref = useRef(null);
@@ -36,24 +38,25 @@ const RSVPSection = () => {
       const childCount = formData.attending === "yes" && formData.withChildren
         ? Number(formData.numberOfChildren)
         : 0;
-      const ageLabel = (value: string) => {
-        if (value === "under7") return t("rsvp.ageUnder7");
-        if (value === "7to12") return t("rsvp.age7to12");
-        if (value === "over12") return t("rsvp.ageOver12");
-        return value;
-      };
-      const lines = [
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        `Attending: ${formData.attending}`,
-        `Number of guests: ${formData.attending === "yes" ? formData.numberOfGuests : "0"}`,
-        `Children: ${childCount}`,
-        ...formData.childAges.slice(0, childCount).map((age, index) => `Child ${index + 1}: ${ageLabel(age)}`),
-        formData.essay ? `Message: ${formData.essay}` : "",
-      ].filter(Boolean);
+      const ages = formData.childAges.slice(0, childCount);
+      const body = new FormData();
+      body.append("name", formData.name);
+      body.append("email", formData.email);
+      body.append("phone", formData.phone);
+      body.append("attending", formData.attending);
+      body.append("numberOfGuests", formData.attending === "yes" ? formData.numberOfGuests : "0");
+      body.append("children", String(childCount));
+      body.append("child1", ages[0] ?? "");
+      body.append("child2", ages[1] ?? "");
+      body.append("child3", ages[2] ?? "");
+      body.append("essay", formData.essay);
+      body.append("timestamp", new Date().toISOString());
 
-      window.location.href = `mailto:${COUPLE_EMAIL}?subject=${encodeURIComponent("Wedding RSVP")}&body=${encodeURIComponent(lines.join("\n"))}`;
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body,
+      });
 
       setSubmitted(true);
       toast({
