@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Clock, CalendarDays, Map, ArrowRight, Shirt } from "lucide-react";
+import { MapPin, Clock, CalendarDays, Map, ArrowRight } from "lucide-react";
 import venueImage from "@/assets/lago-hall.jpg";
 import { useTranslation } from "@/i18n/LanguageContext";
+
+const dressPalette = [
+  { color: "#5C3A2E", labelKey: "details.palette.darkChocolate" },
+  { color: "#C4B6A5", labelKey: "details.palette.oatMilk" },
+  { color: "#E8D9C4", labelKey: "details.palette.almondBeige" },
+  { color: "#C4956A", labelKey: "details.palette.saltedCaramel" },
+  { color: "#8B9A68", labelKey: "details.palette.olivePistachio" },
+  { color: "#1A1A1A", labelKey: "details.palette.creamyEspresso" },
+];
 
 const EventDetailsSection = () => {
   const ref = useRef(null);
@@ -123,16 +132,29 @@ const EventDetailsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center p-8 bg-card border border-border max-w-lg mx-auto"
+          className="text-center max-w-4xl mx-auto pt-4"
         >
-          <Shirt className="w-8 h-8 text-primary mx-auto mb-4" />
-          <h3 className="font-serif text-2xl text-foreground mb-2">
+          <h3 className="font-serif text-4xl md:text-6xl font-normal uppercase tracking-[0.18em] text-foreground mb-8">
             {t("details.dressCode")}
           </h3>
-          <p className="text-primary font-serif text-xl mb-4">{t("details.dressCodeValue")}</p>
-          <p className="text-muted-foreground font-light text-sm leading-relaxed">
-            {t("details.dressCodeDesc")}
+          <p className="font-serif text-lg md:text-2xl leading-relaxed text-foreground max-w-3xl mx-auto">
+            {t("details.dressCodeBody")}{" "}
+            <strong className="font-semibold">{t("details.dressCodeAvoid")}</strong>
           </p>
+          <ul className="mt-12 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-6 sm:gap-x-3 max-w-3xl mx-auto">
+            {dressPalette.map((swatch) => (
+              <li key={swatch.labelKey}>
+                <span
+                  className="mx-auto block h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem] rounded-full"
+                  style={{ backgroundColor: swatch.color }}
+                  aria-hidden="true"
+                />
+                <span className="mt-3 block font-serif text-sm sm:text-base leading-tight text-foreground whitespace-pre-line">
+                  {t(swatch.labelKey)}
+                </span>
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>

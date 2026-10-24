@@ -345,15 +345,39 @@ export const translations: Record<string, { en: string; ro: string }> = {
   // ==================== DressCode ====================
   "details.dressCode": {
     en: "Dress Code",
-    ro: "Cod vestimentar",
+    ro: "Dress Code",
   },
-  "details.dressCodeValue": {
-    en: "Smart Elegant",
-    ro: "Smart Elegant",
+  "details.dressCodeBody": {
+    en: "We want an elegant evening, but nothing rigid. Choose something you feel good in — ideally in shades of dark chocolate, oat milk, almond beige, salted caramel, olive pistachio, and creamy espresso.",
+    ro: "Ne dorim o seară elegantă, dar fără rigiditate. Alegeți ceva în care vă simțiți bine — ideal în nuanțe de ciocolată neagră, lapte de ovăz, bej migdală, caramelă sărată, olive pistachio și espresso cremos.",
   },
-  "details.dressCodeDesc": {
-    en: "Cocktail attire. Light fabrics and soft colors suit a June evening.",
-    ro: "Ținută de cocktail. Țesăturile ușoare și culorile moi se potrivesc unei seri de iunie.",
+  "details.dressCodeAvoid": {
+    en: "Avoid white (we are saving it for the bride) and very casual outfits.",
+    ro: "Evitați albul (îl păstrăm pentru mireasă) și ținutele foarte casual.",
+  },
+  "details.palette.darkChocolate": {
+    en: "dark\nchocolate",
+    ro: "ciocolată\nneagră",
+  },
+  "details.palette.oatMilk": {
+    en: "oat\nmilk",
+    ro: "lapte\nde ovăz",
+  },
+  "details.palette.almondBeige": {
+    en: "almond\nbeige",
+    ro: "bej\nmigdală",
+  },
+  "details.palette.saltedCaramel": {
+    en: "salted\ncaramel",
+    ro: "caramelă\nsărată",
+  },
+  "details.palette.olivePistachio": {
+    en: "olive\npistachio",
+    ro: "olive\npistachio",
+  },
+  "details.palette.creamyEspresso": {
+    en: "creamy\nespresso",
+    ro: "espresso\ncremos",
   },
 
   // ==================== RSVP Extra Fields ====================

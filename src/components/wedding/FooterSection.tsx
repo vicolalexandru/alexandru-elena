@@ -34,12 +34,15 @@ const FooterSection = () => {
 
           <div className="space-y-2 text-muted-foreground font-sans text-sm font-light">
             <p>{t("footer.contact")}</p>
-            <p className="text-foreground">alexandru.vicol.94@gmail.com</p>
+            <p>
+              <a
+                href="mailto:alexandru.vicol.94@gmail.com"
+                className="text-foreground underline-offset-4 hover:text-primary hover:underline transition-colors"
+              >
+                alexandru.vicol.94@gmail.com
+              </a>
+            </p>
           </div>
-
-          <p className="mt-8 text-xs text-muted-foreground font-sans tracking-wider">
-            #AlexandruAndElena
-          </p>
 
           <div className="mt-8 flex justify-center">
             <LanguageToggle />
