@@ -14,6 +14,9 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Vite's BASE_URL always ends with "/". React Router wants no trailing slash.
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 const App = () => (
   <ErrorBoundary>
     <LanguageProvider>
@@ -27,7 +30,7 @@ const App = () => (
           </a>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={routerBasename}>
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
