@@ -21,12 +21,12 @@ const FooterSection = () => {
           <p className="section-kicker mb-4 !text-[clamp(1.25rem,4vw,1.75rem)]">
             {t("footer.thanks")}
           </p>
-          <p className="font-serif text-xl md:text-2xl text-foreground mb-2 leading-relaxed whitespace-pre-line font-light italic">
+          <p className="section-body mx-auto mb-2 max-w-lg whitespace-pre-line text-lg md:text-xl">
             {t("footer.message")}
           </p>
 
-          <div className="font-serif text-6xl md:text-8xl text-primary mb-8 italic">
-            A <span className="text-muted-foreground">&</span> E
+          <div className="footer-monogram mb-8">
+            A <span className="text-[hsl(var(--pearl-gold))]">&</span> E
           </div>
 
           <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">

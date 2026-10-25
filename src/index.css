@@ -123,12 +123,202 @@
   }
 
   .gifts-section {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--background)) 0%,
-      hsl(36 28% 95%) 50%,
-      hsl(var(--background)) 100%
-    );
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, hsl(280 18% 94% / 0.35), transparent 55%),
+      radial-gradient(ellipse 55% 40% at 100% 50%, hsl(210 30% 96% / 0.45), transparent 50%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(36 28% 95%) 50%, hsl(var(--background)) 100%);
+  }
+
+  .moodboard-surface {
+    background:
+      radial-gradient(ellipse 80% 45% at 20% 0%, rgba(255, 255, 255, 0.65), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(225, 210, 235, 0.2), transparent 48%);
+  }
+
+  .hero-eyebrow {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(0.6875rem, 2vw, 0.875rem);
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: hsl(var(--pearl-gold));
+  }
+
+  .hero-names {
+    font-family: "Tangerine", cursive;
+    font-size: clamp(3.25rem, 13vw, 6.25rem);
+    font-weight: 400;
+    line-height: 0.95;
+    color: hsl(var(--pearl-ink));
+  }
+
+  .hero-meta {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: hsl(var(--pearl-ink));
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: hsl(var(--pearl-ink));
+  }
+
+  .form-field {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 1px solid hsl(var(--primary) / 0.2);
+    background: hsl(0 0% 100% / 0.72);
+    padding: 0.75rem 1rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9375rem;
+    color: hsl(var(--foreground));
+    backdrop-filter: blur(6px);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .form-field:focus {
+    outline: none;
+    border-color: hsl(var(--primary) / 0.45);
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.08);
+  }
+
+  .form-choice {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.625rem;
+    border: 1px solid hsl(var(--primary) / 0.15);
+    background: hsl(0 0% 100% / 0.55);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .form-choice:hover {
+    border-color: hsl(var(--primary) / 0.35);
+    background: hsl(0 0% 100% / 0.82);
+  }
+
+  .btn-pearl {
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--primary) / 0.4);
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+  }
+
+  .btn-pearl:hover:not(:disabled) {
+    background: hsl(var(--primary) / 0.88);
+  }
+
+  .btn-pearl-sheen {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--primary) / 0.22);
+    background:
+      linear-gradient(
+        125deg,
+        hsl(0 0% 100% / 0.94) 0%,
+        hsl(38 42% 96% / 0.92) 32%,
+        hsl(280 22% 96% / 0.84) 58%,
+        hsl(205 28% 95% / 0.9) 100%
+      );
+    color: hsl(var(--pearl-ink));
+    font-family: "Raleway", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    backdrop-filter: blur(12px);
+    box-shadow:
+      0 8px 28px hsl(var(--primary) / 0.12),
+      inset 0 1px 0 hsl(0 0% 100% / 0.92),
+      inset 0 -1px 0 hsl(var(--primary) / 0.05);
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.15s ease;
+  }
+
+  .btn-pearl-sheen:hover:not(:disabled) {
+    border-color: hsl(var(--pearl-gold) / 0.5);
+    box-shadow:
+      0 12px 32px hsl(var(--primary) / 0.16),
+      inset 0 1px 0 hsl(0 0% 100% / 0.98),
+      0 0 28px hsl(280 28% 90% / 0.35);
+  }
+
+  .btn-pearl-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--primary) / 0.28);
+    background:
+      linear-gradient(
+        125deg,
+        hsl(0 0% 100% / 0.88) 0%,
+        hsl(38 40% 96% / 0.85) 40%,
+        hsl(280 20% 96% / 0.78) 100%
+      );
+    color: hsl(var(--pearl-ink));
+    font-family: "Raleway", sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    backdrop-filter: blur(8px);
+    box-shadow:
+      0 4px 20px hsl(var(--primary) / 0.08),
+      inset 0 1px 0 hsl(0 0% 100% / 0.85);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .btn-pearl-outline:hover {
+    border-color: hsl(var(--pearl-gold) / 0.45);
+    box-shadow:
+      0 6px 24px hsl(var(--primary) / 0.12),
+      inset 0 1px 0 hsl(0 0% 100% / 0.95);
+  }
+
+  .hero-confirm-cta {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    min-width: 5.5rem;
+    padding: 0.75rem 1.1rem 0.65rem;
+    line-height: 1.2;
+    text-align: center;
+    box-shadow:
+      0 14px 40px rgb(0 0 0 / 0.3),
+      inset 0 1px 0 hsl(0 0% 100% / 0.92),
+      0 0 0 1px hsl(0 0% 100% / 0.2);
+  }
+
+  .hero-confirm-cta:hover {
+    box-shadow:
+      0 16px 44px rgb(0 0 0 / 0.28),
+      inset 0 1px 0 hsl(0 0% 100% / 0.98),
+      0 0 32px hsl(280 28% 92% / 0.4),
+      0 0 0 1px hsl(0 0% 100% / 0.28);
+  }
+
+  .footer-monogram {
+    font-family: "Tangerine", cursive;
+    font-size: clamp(3rem, 12vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: hsl(var(--primary));
   }
 
   .gift-list-radio {
@@ -236,8 +426,7 @@
 
   .section-title--rsvp {
     font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .section-kicker {
@@ -379,12 +568,15 @@
   }
 
   .gradient-rose {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--champagne-light)) 0%,
-      hsl(var(--ivory)) 45%,
-      hsl(var(--sage-light)) 100%
-    );
+    background:
+      radial-gradient(ellipse 65% 45% at 10% 20%, rgba(255, 255, 255, 0.7), transparent 52%),
+      radial-gradient(ellipse 50% 40% at 95% 80%, rgba(205, 220, 235, 0.25), transparent 50%),
+      linear-gradient(
+        135deg,
+        hsl(var(--champagne-light)) 0%,
+        hsl(var(--ivory)) 45%,
+        hsl(var(--sage-light)) 100%
+      );
   }
 
   .gradient-sage {

@@ -34,7 +34,7 @@ const EventDetailsSection = () => {
       ref={ref}
       id="details"
       aria-labelledby="details-heading"
-      className="px-6 pb-8 pt-16 md:px-12 md:pb-10 md:pt-24 bg-background"
+      className="moodboard-surface px-6 pb-8 pt-16 md:px-12 md:pb-10 md:pt-24"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div

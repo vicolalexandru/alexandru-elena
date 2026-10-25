@@ -12,11 +12,10 @@ export const translations: Record<string, { en: string; ro: string }> = {
     en: "Lago Event Park \u2022 Sicily hall \u2022 D\u0103nceni, Chi\u0219in\u0103u",
     ro: "Lago Event Park \u2022 sala Sicilia \u2022 D\u0103nceni, Chi\u0219in\u0103u",
   },
-  "hero.rsvp": {
-    en: "RSVP",
-    ro: "RSVP",
+  "hero.confirm": {
+    en: "Confirm",
+    ro: "Confirmă",
   },
-
   // ==================== CountdownSection ====================
   "countdown.title": {
     en: "Counting Down to Forever",
@@ -87,8 +86,8 @@ export const translations: Record<string, { en: string; ro: string }> = {
 
   // ==================== RSVPSection ====================
   "rsvp.title": {
-    en: "RSVP",
-    ro: "RSVP",
+    en: "Confirm presence",
+    ro: "Confirmare prezență",
   },
   "rsvp.deadline": {
     en: "Please respond by May 15, 2027",
@@ -143,16 +142,16 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "/200 caractere",
   },
   "rsvp.submit": {
-    en: "Submit RSVP",
-    ro: "Trimite RSVP",
+    en: "Send confirmation",
+    ro: "Trimite confirmarea",
   },
   "rsvp.submitting": {
     en: "Submitting...",
     ro: "Se trimite...",
   },
   "rsvp.successTitle": {
-    en: "RSVP Received!",
-    ro: "RSVP primit!",
+    en: "Confirmed!",
+    ro: "Confirmat!",
   },
   "rsvp.successDesc": {
     en: "Thank you for responding. We can't wait to celebrate with you!",

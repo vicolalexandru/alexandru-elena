@@ -95,7 +95,7 @@ const RSVPSection = () => {
   };
 
   return (
-    <section ref={ref} id="rsvp" className="px-6 pb-16 pt-8 md:px-12 md:pb-24 md:pt-10 bg-background">
+    <section ref={ref} id="rsvp" className="moodboard-surface px-6 pb-16 pt-8 md:px-12 md:pb-24 md:pt-10">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -103,7 +103,6 @@ const RSVPSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <p className="decorative-flourish mb-4">✉</p>
           <h2 className="section-title section-title--rsvp mb-4">
             {t("rsvp.title")}
           </h2>
@@ -123,7 +122,7 @@ const RSVPSection = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+              className="form-label"
             >
               {t("rsvp.fullName")}
             </label>
@@ -134,14 +133,14 @@ const RSVPSection = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground"
+              className="form-field"
             />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+              className="form-label"
             >
               {t("rsvp.email")}
             </label>
@@ -152,14 +151,14 @@ const RSVPSection = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground"
+              className="form-field"
             />
           </div>
 
           <div>
             <label
               htmlFor="phone"
-              className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+              className="form-label"
             >
               {t("rsvp.phone")}
             </label>
@@ -170,16 +169,16 @@ const RSVPSection = () => {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground"
+              className="form-field"
             />
           </div>
 
           <div>
-            <label className="block text-sm uppercase tracking-widest text-primary mb-4 font-sans font-semibold">
+            <label className="form-label mb-4">
               {t("rsvp.attending")}
             </label>
             <div className="space-y-3">
-              <label className="flex items-center p-4 bg-white border border-gray-300 cursor-pointer hover:border-primary transition-colors">
+              <label className="form-choice">
                 <input
                   type="radio"
                   name="attending"
@@ -187,11 +186,11 @@ const RSVPSection = () => {
                   required
                   checked={formData.attending === "yes"}
                   onChange={handleChange}
-                  className="w-5 h-5 text-primary border-gray-300 focus:ring-primary mr-4"
+                  className="mr-4 h-5 w-5 border-primary/30 text-primary focus:ring-primary"
                 />
-                <span className="text-primary font-sans text-base">{t("rsvp.yes")}</span>
+                <span className="font-[Raleway,sans-serif] text-base text-foreground">{t("rsvp.yes")}</span>
               </label>
-              <label className="flex items-center p-4 bg-white border border-gray-300 cursor-pointer hover:border-primary transition-colors">
+              <label className="form-choice">
                 <input
                   type="radio"
                   name="attending"
@@ -199,9 +198,9 @@ const RSVPSection = () => {
                   required
                   checked={formData.attending === "no"}
                   onChange={handleChange}
-                  className="w-5 h-5 text-primary border-gray-300 focus:ring-primary mr-4"
+                  className="mr-4 h-5 w-5 border-primary/30 text-primary focus:ring-primary"
                 />
-                <span className="text-primary font-sans text-base">{t("rsvp.no")}</span>
+                <span className="font-[Raleway,sans-serif] text-base text-foreground">{t("rsvp.no")}</span>
               </label>
             </div>
           </div>
@@ -211,7 +210,7 @@ const RSVPSection = () => {
               <div>
                 <label
                   htmlFor="numberOfGuests"
-                  className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+                  className="form-label"
                 >
                   {t("rsvp.numberOfGuests")}
                 </label>
@@ -220,7 +219,7 @@ const RSVPSection = () => {
                   name="numberOfGuests"
                   value={formData.numberOfGuests}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground"
+                  className="form-field"
                 >
                   {[1, 2].map(n => (
                     <option key={n} value={String(n)}>{n}</option>
@@ -228,7 +227,7 @@ const RSVPSection = () => {
                 </select>
               </div>
 
-              <label className="flex items-center p-4 bg-white border border-gray-300 cursor-pointer hover:border-primary transition-colors">
+              <label className="form-choice">
                 <input
                   type="checkbox"
                   name="withChildren"
@@ -242,9 +241,9 @@ const RSVPSection = () => {
                       childAges: checked ? [""] : [],
                     }));
                   }}
-                  className="w-5 h-5 text-primary border-gray-300 focus:ring-primary mr-4"
+                  className="mr-4 h-5 w-5 rounded border-primary/30 text-primary focus:ring-primary"
                 />
-                <span className="text-primary font-sans text-base">{t("rsvp.withChildren")}</span>
+                <span className="font-[Raleway,sans-serif] text-base text-foreground">{t("rsvp.withChildren")}</span>
               </label>
 
               {formData.withChildren && (
@@ -252,7 +251,7 @@ const RSVPSection = () => {
                   <div>
                     <label
                       htmlFor="numberOfChildren"
-                      className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+                      className="form-label"
                     >
                       {t("rsvp.numberOfChildren")}
                     </label>
@@ -268,7 +267,7 @@ const RSVPSection = () => {
                           childAges: Array.from({ length: count }, (_, i) => prev.childAges[i] ?? ""),
                         }));
                       }}
-                      className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground"
+                      className="form-field"
                     >
                       {[1, 2, 3].map((n) => (
                         <option key={n} value={String(n)}>{n}</option>
@@ -280,7 +279,7 @@ const RSVPSection = () => {
                     <div key={index}>
                       <label
                         htmlFor={`childAge-${index}`}
-                        className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+                        className="form-label"
                       >
                         {t("rsvp.childAge", { n: String(index + 1) })}
                       </label>
@@ -296,7 +295,7 @@ const RSVPSection = () => {
                             childAges: prev.childAges.map((current, i) => (i === index ? value : current)),
                           }));
                         }}
-                        className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground"
+                        className="form-field"
                       >
                         <option value="" disabled>{t("rsvp.childAge", { n: String(index + 1) })}</option>
                         {CHILD_AGE_KEYS.map((key) => (
@@ -316,7 +315,7 @@ const RSVPSection = () => {
           <div>
             <label
               htmlFor="essay"
-              className="block text-sm uppercase tracking-widest text-primary mb-2 font-sans font-semibold"
+              className="form-label"
             >
               {t("rsvp.messageLabel")} {formData.attending === "no" ? t("rsvp.required") : t("rsvp.optional")}
             </label>
@@ -329,7 +328,7 @@ const RSVPSection = () => {
               value={formData.essay}
               onChange={handleChange}
               placeholder={formData.attending === "no" ? t("rsvp.declinePlaceholder") : t("rsvp.messagePlaceholder")}
-              className="w-full px-4 py-3 bg-white border border-gray-300 focus:border-primary focus:outline-none transition-colors font-sans text-foreground resize-none"
+              className="form-field resize-none"
             />
             {formData.attending === "no" && formData.essay.length > 0 && formData.essay.length < 200 && (
               <p className="text-sm text-muted-foreground mt-1">{formData.essay.length}{t("rsvp.charCount")}</p>
@@ -340,7 +339,7 @@ const RSVPSection = () => {
             <button
               type="submit"
               disabled={isSubmitting || submitted || !formData.attending}
-              className="w-full py-4 bg-primary text-primary-foreground font-sans text-base tracking-widest uppercase hover:bg-primary/90 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="btn-pearl w-full py-4 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {submitted ? t("rsvp.successTitle") : isSubmitting ? t("rsvp.submitting") : t("rsvp.submit")}
             </button>

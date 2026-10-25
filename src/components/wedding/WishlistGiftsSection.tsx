@@ -42,7 +42,7 @@ const WishlistGiftsSection = () => {
           <button
             type="button"
             onClick={() => setListOpen(true)}
-            className="mt-10 inline-flex items-center gap-2 rounded-full border border-foreground/70 bg-transparent px-8 py-3 font-[Raleway,sans-serif] text-xs uppercase tracking-[0.22em] text-foreground transition-colors hover:bg-foreground hover:text-background"
+            className="btn-pearl-outline mt-10 px-8 py-3 text-xs uppercase tracking-[0.22em]"
           >
             {t("gifts.openList")}
             <ArrowUpRight className="h-4 w-4" />

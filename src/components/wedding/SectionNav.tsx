@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "@/i18n/LanguageContext";
 
 const sections = [
-  { id: "hero", labelKey: "hero.rsvp" },
+  { id: "hero", labelKey: "details.title" },
   { id: "details", labelKey: "details.title" },
   { id: "gifts", labelKey: "gifts.title" },
   { id: "rsvp", labelKey: "rsvp.title" },
