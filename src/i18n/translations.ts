@@ -64,41 +64,25 @@ export const translations: Record<string, { en: string; ro: string }> = {
     en: "Lago Event Park, Sicily hall",
     ro: "Lago Event Park, sala Sicilia",
   },
-  "details.ceremony.title": {
-    en: "The Ceremony",
-    ro: "Ceremonia",
+  "details.program.kicker": {
+    en: "THE DAY'S PROGRAM",
+    ro: "PROGRAMUL ZILEI",
   },
-  "details.ceremony.time": {
-    en: "5:00 PM",
+  "details.program.arrival": {
+    en: "Guest arrival",
+    ro: "Sosirea invitaților",
+  },
+  "details.program.arrivalTime": {
+    en: "17:00",
     ro: "17:00",
   },
-  "details.ceremony.desc": {
-    en: "Join us as we exchange our vows in Sicily hall at Lago Event Park.",
-    ro: "Vă așteptăm la schimbul de jurăminte, în sala Sicilia de la Lago Event Park.",
+  "details.program.ceremony": {
+    en: "Ceremony",
+    ro: "Ceremonia",
   },
-  "details.cocktail.title": {
-    en: "Cocktail Hour",
-    ro: "Ora de cocktail",
-  },
-  "details.cocktail.time": {
-    en: "5:30 PM",
+  "details.program.ceremonyTime": {
+    en: "17:30",
     ro: "17:30",
-  },
-  "details.cocktail.desc": {
-    en: "Drinks and a little time together before dinner.",
-    ro: "Băuturi și un răgaz împreună înainte de cină.",
-  },
-  "details.reception.title": {
-    en: "Reception & Dinner",
-    ro: "Recepție și cină",
-  },
-  "details.reception.time": {
-    en: "7:00 PM",
-    ro: "19:00",
-  },
-  "details.reception.desc": {
-    en: "Dinner, toasts, and dancing.",
-    ro: "Cină, toasturi și dans.",
   },
 
   // ==================== RSVPSection ====================
@@ -184,13 +168,17 @@ export const translations: Record<string, { en: string; ro: string }> = {
   },
 
   // ==================== FooterSection ====================
-  "footer.celebrate": {
-    en: "We can't wait to celebrate with you!",
-    ro: "Abia așteptăm să sărbătorim cu voi!",
+  "footer.thanks": {
+    en: "Thank you",
+    ro: "MULȚUMIM",
+  },
+  "footer.message": {
+    en: "We can't wait to share this special day together.\nWith love,",
+    ro: "Abia așteptăm să trăim împreună\naceastă zi specială.\nCu drag,",
   },
   "footer.contact": {
-    en: "For questions or travel assistance, please contact:",
-    ro: "Pentru întrebări sau asistență de călătorie, vă rugăm să ne contactați:",
+    en: "For questions, please contact:",
+    ro: "Pentru întrebări, vă rugăm să ne contactați:",
   },
 
   // ==================== EnvelopeOverlay ====================
@@ -344,40 +332,24 @@ export const translations: Record<string, { en: string; ro: string }> = {
 
   // ==================== DressCode ====================
   "details.dressCode": {
-    en: "Dress Code",
-    ro: "Dress Code",
+    en: "Dresscode",
+    ro: "Dresscode",
   },
-  "details.dressCodeBody": {
-    en: "We want an elegant evening, but nothing rigid. Choose something you feel good in — ideally in shades of dark chocolate, oat milk, almond beige, salted caramel, olive pistachio, and creamy espresso.",
-    ro: "Ne dorim o seară elegantă, dar fără rigiditate. Alegeți ceva în care vă simțiți bine — ideal în nuanțe de ciocolată neagră, lapte de ovăz, bej migdală, caramelă sărată, olive pistachio și espresso cremos.",
+  "details.dressCode.ladiesHeading": {
+    en: "For ladies",
+    ro: "Pentru doamne",
   },
-  "details.dressCodeAvoid": {
-    en: "Avoid white (we are saving it for the bride) and very casual outfits.",
-    ro: "Evitați albul (îl păstrăm pentru mireasă) și ținutele foarte casual.",
+  "details.dressCode.gentlemenHeading": {
+    en: "For gentleman",
+    ro: "Pentru bărbați",
   },
-  "details.palette.darkChocolate": {
-    en: "dark\nchocolate",
-    ro: "ciocolată\nneagră",
+  "details.dressCode.ladiesBody": {
+    en: "Floor-length gowns or elegant full-length dresses are kindly requested. Preferred palette: champagne, dusty rose, sage, dusty blue, and lavender.",
+    ro: "Vă rugăm rochii de seară lungi sau rochii elegante până la glezne. Paleta preferată: champagne, roz praf, salvie, albastru praf și lavandă.",
   },
-  "details.palette.oatMilk": {
-    en: "oat\nmilk",
-    ro: "lapte\nde ovăz",
-  },
-  "details.palette.almondBeige": {
-    en: "almond\nbeige",
-    ro: "bej\nmigdală",
-  },
-  "details.palette.saltedCaramel": {
-    en: "salted\ncaramel",
-    ro: "caramelă\nsărată",
-  },
-  "details.palette.olivePistachio": {
-    en: "olive\npistachio",
-    ro: "olive\npistachio",
-  },
-  "details.palette.creamyEspresso": {
-    en: "creamy\nespresso",
-    ro: "espresso\ncremos",
+  "details.dressCode.gentlemenBody": {
+    en: "Tailored suits with a white or beige shirt. Preferred palette: black, dark navy, or dark brown.",
+    ro: "Costum croit cu cămașă albă sau bej. Paleta preferată: negru, bleumarin închis sau maro închis.",
   },
 
   // ==================== RSVP Extra Fields ====================

@@ -50,7 +50,9 @@ const CountdownSection = () => {
       x: Math.random() * 100,
       delay: Math.random() * 3,
       duration: 2 + Math.random() * 3,
-      color: ["hsl(201,36%,62%)", "hsl(190,32%,80%)", "hsl(32,32%,82%)", "#fff"][Math.floor(Math.random() * 4)],
+      color: ["hsl(36,35%,75%)", "hsl(210,25%,82%)", "hsl(330,20%,85%)", "hsl(32,25%,58%)", "#fff"][
+        Math.floor(Math.random() * 5)
+      ],
       size: 4 + Math.random() * 8,
     })),
   []);

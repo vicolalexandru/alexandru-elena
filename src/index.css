@@ -4,45 +4,48 @@
 
 @layer base {
   :root {
-    --background: 204 45% 98%;
-    --foreground: 208 24% 24%;
+    --background: 36 33% 97%;
+    --foreground: 30 10% 26%;
 
-    --card: 200 40% 99%;
-    --card-foreground: 208 24% 24%;
+    --card: 38 40% 99%;
+    --card-foreground: 30 10% 26%;
 
-    --popover: 204 45% 98%;
-    --popover-foreground: 208 24% 24%;
+    --popover: 36 33% 97%;
+    --popover-foreground: 30 10% 26%;
 
-    --primary: 201 36% 48%;
-    --primary-foreground: 0 0% 100%;
+    /* Pantone-style metallic champagne silver */
+    --primary: 32 18% 46%;
+    --primary-foreground: 40 40% 98%;
 
-    --secondary: 200 32% 90%;
-    --secondary-foreground: 208 24% 24%;
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 30 10% 26%;
 
-    --muted: 204 28% 94%;
-    --muted-foreground: 208 12% 42%;
+    --muted: 36 24% 94%;
+    --muted-foreground: 30 8% 42%;
 
-    --accent: 32 32% 90%;
-    --accent-foreground: 208 24% 24%;
+    --accent: 280 18% 94%;
+    --accent-foreground: 30 10% 26%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 40% 98%;
 
-    --border: 204 24% 86%;
-    --input: 204 24% 86%;
-    --ring: 201 36% 48%;
+    --border: 35 16% 86%;
+    --input: 35 16% 86%;
+    --ring: 32 18% 46%;
 
     --radius: 0.5rem;
 
-    /* Pearl, shell, and pale sea blue */
-    --rose: 201 36% 48%;
-    --rose-light: 201 42% 93%;
-    --sage: 188 24% 78%;
-    --sage-light: 190 32% 93%;
-    --champagne: 32 32% 86%;
-    --champagne-light: 32 36% 94%;
-    --ivory: 204 45% 98%;
-    --warm-brown: 208 24% 24%;
+    /* Pearl & iridescent shell palette */
+    --rose: 32 18% 46%;
+    --rose-light: 38 38% 95%;
+    --sage: 210 22% 82%;
+    --sage-light: 210 30% 96%;
+    --champagne: 38 38% 78%;
+    --champagne-light: 40 45% 94%;
+    --ivory: 36 33% 97%;
+    --warm-brown: 30 10% 26%;
+    --pearl-ink: 32 12% 44%;
+    --pearl-gold: 36 35% 58%;
 
     /* Typography */
     --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -84,9 +87,13 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    background-color: hsl(var(--background));
     background-image:
-      radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 0.9), transparent 42%),
-      radial-gradient(ellipse at 100% 100%, rgba(214, 196, 176, 0.18), transparent 36%);
+      radial-gradient(ellipse 80% 55% at 15% -5%, rgba(255, 255, 255, 0.95), transparent 52%),
+      radial-gradient(ellipse 55% 40% at 95% 8%, rgba(225, 210, 235, 0.28), transparent 48%),
+      radial-gradient(ellipse 50% 38% at 5% 92%, rgba(205, 220, 235, 0.22), transparent 44%),
+      radial-gradient(ellipse 65% 45% at 100% 100%, rgba(230, 210, 190, 0.32), transparent 46%),
+      linear-gradient(180deg, hsl(38 35% 98%) 0%, hsl(36 28% 96%) 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -100,11 +107,201 @@
   }
 
   .decorative-line {
-    @apply w-24 h-px bg-primary mx-auto;
+    @apply w-24 h-px mx-auto;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--champagne)) 20%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--champagne)) 80%,
+      transparent
+    );
   }
 
   .decorative-flourish {
     @apply text-primary text-3xl font-serif italic;
+  }
+
+  .program-timing {
+    --ink: hsl(var(--pearl-ink));
+    color: var(--ink);
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+  }
+
+  .program-timing__kicker {
+    margin: 0 0 50px;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .program-timing__grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 80px;
+  }
+
+  .program-timing__item {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .program-timing__icon {
+    width: 62px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+
+  .program-timing__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .program-timing__time {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
+  .program-timing__title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+
+  @media (max-width: 768px) {
+    .program-timing__kicker {
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+
+    .program-timing__grid {
+      column-gap: 40px;
+    }
+  }
+
+  .dresscode {
+    text-align: center;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .dresscode__title {
+    margin: 0 0 56px;
+    font-family: "Allura", cursive;
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: hsl(var(--primary));
+  }
+
+  .dresscode__block + .dresscode__block {
+    margin-top: 56px;
+  }
+
+  .dresscode__heading {
+    margin: 0 0 20px;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: hsl(var(--pearl-gold));
+  }
+
+  .dresscode__text {
+    margin: 0 auto;
+    max-width: 22rem;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .dresscode__swatches {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dresscode__swatches--ladies {
+    gap: 10px;
+  }
+
+  .dresscode__dot {
+    display: block;
+    width: 46px;
+    height: 46px;
+    border-radius: 9999px;
+  }
+
+  .dresscode__swatches--ladies .dresscode__dot {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    .dresscode__title {
+      margin-bottom: 40px;
+    }
+
+    .dresscode__block + .dresscode__block {
+      margin-top: 44px;
+    }
+
+    .dresscode__heading {
+      font-size: 10px;
+      letter-spacing: 0.36em;
+    }
+
+    .dresscode__text {
+      font-size: 14px;
+    }
+
+    .dresscode__swatches {
+      gap: 10px;
+    }
+
+    .dresscode__dot {
+      width: 38px;
+      height: 38px;
+    }
+
+    .dresscode__swatches--ladies .dresscode__dot {
+      width: 34px;
+      height: 34px;
+    }
+
+    .program-timing__grid {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+    }
+
+    .program-timing__icon {
+      margin-bottom: 8px;
+    }
+
+    .program-timing__time {
+      font-size: 20px;
+    }
+
+    .program-timing__title {
+      font-size: 16px;
+    }
   }
 }
 
@@ -125,11 +322,21 @@
   }
 
   .gradient-rose {
-    background: linear-gradient(135deg, hsl(var(--rose-light)) 0%, hsl(var(--ivory)) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(var(--champagne-light)) 0%,
+      hsl(var(--ivory)) 45%,
+      hsl(var(--sage-light)) 100%
+    );
   }
 
   .gradient-sage {
-    background: linear-gradient(135deg, hsl(var(--sage-light)) 0%, hsl(var(--ivory)) 100%);
+    background: linear-gradient(
+      160deg,
+      hsl(var(--sage-light)) 0%,
+      hsl(var(--ivory)) 48%,
+      hsl(var(--champagne-light)) 100%
+    );
   }
 
   .text-shadow-soft {
