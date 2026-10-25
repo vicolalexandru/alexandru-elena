@@ -30,19 +30,22 @@ const EventDetailsSection = () => {
   ];
 
   return (
-    <section ref={ref} id="details" className="py-16 md:py-24 px-6 md:px-12 bg-background">
+    <section
+      ref={ref}
+      id="details"
+      aria-labelledby="details-heading"
+      className="px-6 pb-8 pt-16 md:px-12 md:pb-10 md:pt-24 bg-background"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-10 text-center md:mb-12"
         >
-          <p className="decorative-flourish mb-4">✦</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
+          <h2 id="details-heading" className="section-kicker">
             {t("details.title")}
           </h2>
-          <div className="decorative-line" />
         </motion.div>
 
         {/* Venue Image */}
@@ -100,7 +103,7 @@ const EventDetailsSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="program-timing mb-16"
         >
-          <p className="program-timing__kicker">{t("details.program.kicker")}</p>
+          <h3 className="section-kicker program-timing__kicker">{t("details.program.kicker")}</h3>
           <div className="program-timing__grid">
             {program.map((item) => (
               <article key={item.title} className="program-timing__item">
@@ -120,7 +123,7 @@ const EventDetailsSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="dresscode max-w-xl mx-auto pt-4"
         >
-          <h3 className="dresscode__title">{t("details.dressCode")}</h3>
+          <h3 className="section-kicker dresscode__title">{t("details.dressCode")}</h3>
 
           <div className="dresscode__block">
             <p className="dresscode__heading">{t("details.dressCode.ladiesHeading")}</p>

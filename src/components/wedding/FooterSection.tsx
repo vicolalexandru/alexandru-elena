@@ -18,7 +18,7 @@ const FooterSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-serif text-2xl md:text-3xl text-foreground mb-4 uppercase tracking-[0.22em] font-normal">
+          <p className="section-kicker mb-4 !text-[clamp(1.25rem,4vw,1.75rem)]">
             {t("footer.thanks")}
           </p>
           <p className="font-serif text-xl md:text-2xl text-foreground mb-2 leading-relaxed whitespace-pre-line font-light italic">

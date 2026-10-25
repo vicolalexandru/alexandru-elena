@@ -217,7 +217,7 @@ const PhotoUploadSection = () => {
           className="text-center mb-12"
         >
           <p className="decorative-flourish mb-4">📷</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
+          <h2 className="section-title mb-4">
             {t("photos.title")}
           </h2>
           <div className="decorative-line mb-6" />

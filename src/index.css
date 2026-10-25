@@ -122,6 +122,40 @@
     @apply text-primary text-3xl font-serif italic;
   }
 
+  .gifts-section {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(36 28% 95%) 50%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .gift-list-radio {
+    appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: 1.5px solid hsl(var(--foreground) / 0.28);
+    border-radius: 9999px;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+
+  .gift-list-radio:checked {
+    border-color: hsl(var(--foreground) / 0.75);
+    background: radial-gradient(
+      circle,
+      hsl(var(--foreground)) 0 38%,
+      transparent 40% 100%
+    );
+  }
+
+  .gift-list-radio:focus-visible {
+    outline: 2px solid hsl(var(--primary) / 0.45);
+    outline-offset: 2px;
+  }
+
   .program-timing {
     --ink: hsl(var(--pearl-ink));
     color: var(--ink);
@@ -131,11 +165,7 @@
 
   .program-timing__kicker {
     margin: 0 0 50px;
-    font-size: 32px;
     font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink);
   }
 
   .program-timing__grid {
@@ -182,7 +212,6 @@
   @media (max-width: 768px) {
     .program-timing__kicker {
       margin-bottom: 40px;
-      font-size: 20px;
     }
 
     .program-timing__grid {
@@ -195,13 +224,41 @@
     color: hsl(var(--muted-foreground));
   }
 
+  /* Evventa template2-style section headings (Raleway) */
+  .section-title {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.25;
+    color: hsl(var(--pearl-ink));
+  }
+
+  .section-title--rsvp {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-kicker {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.25;
+    color: hsl(var(--pearl-ink));
+  }
+
+  .section-body {
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
+    font-weight: 400;
+    line-height: 1.7;
+    color: hsl(var(--pearl-ink));
+  }
+
   .dresscode__title {
     margin: 0 0 56px;
-    font-family: "Allura", cursive;
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
-    font-weight: 400;
-    line-height: 1;
-    color: hsl(var(--primary));
   }
 
   .dresscode__block + .dresscode__block {
@@ -221,11 +278,11 @@
   .dresscode__text {
     margin: 0 auto;
     max-width: 22rem;
-    font-family: var(--font-sans);
-    font-size: 15px;
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
     font-weight: 400;
-    line-height: 1.55;
-    color: hsl(var(--muted-foreground));
+    line-height: 1.7;
+    color: hsl(var(--pearl-ink));
   }
 
   .dresscode__swatches {

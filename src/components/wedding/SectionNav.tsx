@@ -3,9 +3,8 @@ import { useTranslation } from "@/i18n/LanguageContext";
 
 const sections = [
   { id: "hero", labelKey: "hero.rsvp" },
-  { id: "countdown", labelKey: "countdown.title" },
   { id: "details", labelKey: "details.title" },
-  { id: "travel", labelKey: "travel.title" },
+  { id: "gifts", labelKey: "gifts.title" },
   { id: "rsvp", labelKey: "rsvp.title" },
 ];
 

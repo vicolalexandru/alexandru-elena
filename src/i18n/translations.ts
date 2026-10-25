@@ -65,24 +65,24 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Lago Event Park, sala Sicilia",
   },
   "details.program.kicker": {
-    en: "THE DAY'S PROGRAM",
-    ro: "PROGRAMUL ZILEI",
+    en: "The Day's Program",
+    ro: "Programul zilei",
   },
   "details.program.arrival": {
     en: "Guest arrival",
     ro: "Sosirea invitaților",
   },
   "details.program.arrivalTime": {
-    en: "17:00",
-    ro: "17:00",
+    en: "16:30",
+    ro: "16:30",
   },
   "details.program.ceremony": {
     en: "Ceremony",
     ro: "Ceremonia",
   },
   "details.program.ceremonyTime": {
-    en: "17:30",
-    ro: "17:30",
+    en: "17:00",
+    ro: "17:00",
   },
 
   // ==================== RSVPSection ====================
@@ -169,8 +169,8 @@ export const translations: Record<string, { en: string; ro: string }> = {
 
   // ==================== FooterSection ====================
   "footer.thanks": {
-    en: "Thank you",
-    ro: "MULȚUMIM",
+    en: "Thank You",
+    ro: "Mulțumim",
   },
   "footer.message": {
     en: "We can't wait to share this special day together.\nWith love,",
@@ -288,59 +288,107 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Vă rugăm să încercați din nou mai târziu.",
   },
 
-  // ==================== TravelSection ====================
-  "travel.title": {
-    en: "Getting There",
-    ro: "Cum ajungi",
+  // ==================== WishlistGiftsSection ====================
+  "gifts.title": {
+    en: "Gifts",
+    ro: "Daruri",
   },
-  "travel.subtitle": {
-    en: "Everything you need to know for your trip to Chișinău",
-    ro: "Tot ce trebuie să știi pentru drumul spre Chișinău",
+  "gifts.body": {
+    en: "Your presence is the most beautiful gift for us. If you would like to give us something extra, instead of flowers, which wilt quickly, we would be happier with a good bottle of wine, a book with a message from you, or a small meaningful object.",
+    ro: "Prezența voastră este cel mai frumos cadou pentru noi. Dacă doriți să ne oferiți ceva în plus, în loc de flori, care se ofilesc repede, ne-ar bucura mai mult o sticlă de vin bun, o carte cu un mesaj din partea voastră sau un mic obiect cu semnificație.",
   },
-  "travel.airport.title": {
-    en: "Nearest Airport",
-    ro: "Cel mai apropiat aeroport",
+  "gifts.bodyHousehold": {
+    en: "If you would like to give us a small useful gift for our home, we have prepared a short selection of appliances you can view here:",
+    ro: "Dacă dorești să ne oferi un mic cadou util pentru casă, am pregătit o scurtă selecție de electrocasnice pe care le poți vedea aici:",
   },
-  "travel.airport.desc": {
-    en: "Chișinău International Airport (RMO) is the closest airport. Dănceni is a short drive from the city.",
-    ro: "Aeroportul Internațional Chișinău (RMO) este cel mai apropiat. Dănceni este la o scurtă distanță cu mașina de oraș.",
+  "gifts.openList": {
+    en: "See gift ideas",
+    ro: "Vezi ideile de cadouri",
   },
-  "travel.transport.title": {
-    en: "Getting Around",
-    ro: "Transport",
+  "gifts.adultsOnly": {
+    en: "To keep the authentic La Dolce Vita atmosphere, our evening is for adults only — a perfect occasion to relax and celebrate.",
+    ro: "Pentru a păstra atmosfera autentică La Dolce Vita, seara noastră este dedicată exclusiv adulților – o ocazie perfectă de relaxare și distracție.",
   },
-  "travel.transport.desc": {
-    en: "A car or taxi from Chișinău is the simplest way to reach Lago Event Park in Dănceni.",
-    ro: "Mașina sau un taxi din Chișinău este cel mai simplu drum până la Lago Event Park, în Dănceni.",
+  "gifts.listEyebrow": {
+    en: "Gift ideas",
+    ro: "Idei de cadouri",
   },
-  "travel.stay.title": {
-    en: "Where to Stay",
-    ro: "Cazare",
+  "gifts.categoriesHeading": {
+    en: "Choose a list",
+    ro: "Alege o listă",
   },
-  "travel.stay.desc": {
-    en: "Guests coming from out of town can stay in hotels in Chișinău, a short drive from the venue.",
-    ro: "Invitații din alte orașe pot sta la hoteluri în Chișinău, la o scurtă distanță de locație.",
+  "gifts.listIntro": {
+    en: "We grouped a few things for our home that would truly help us. Pick a category to see what is still available.",
+    ro: "Am grupat câteva lucruri pentru casa noastră care ne-ar fi cu adevărat de folos. Alege o categorie pentru a vedea ce mai este disponibil.",
   },
-  "travel.tip.title": {
-    en: "Pro Tips",
-    ro: "Sfaturi utile",
+  "gifts.itemsAvailable": {
+    en: "{n} available",
+    ro: "{n} disponibile",
   },
-  "travel.tip.desc": {
-    en: "Late June in Moldova is warm. Comfortable shoes and a light layer for the evening are a good idea.",
-    ro: "Sfârșitul de iunie în Moldova este cald. Pantofii comozi și o haină subțire pentru seară sunt o idee bună.",
+  "gifts.categoryFull": {
+    en: "All reserved",
+    ro: "Toate rezervate",
+  },
+  "gifts.backToCategories": {
+    en: "All lists",
+    ro: "Toate listele",
+  },
+  "gifts.listTitle": {
+    en: "Gift List",
+    ro: "Lista de daruri",
+  },
+  "gifts.close": {
+    en: "Close",
+    ro: "Închide",
+  },
+  "gifts.listDisclaimer": {
+    en: "Please choose a gift only if you truly wish to give it. After you reserve it, it will disappear from the list for other guests. Thank you in advance for your understanding and kindness!",
+    ro: "Vă rugăm să alegeți cadoul doar dacă doriți cu adevărat să îl dăruiți. După selectare, acesta va dispărea din listă și nu va mai putea fi ales de alți invitați. Vă mulțumim anticipat pentru înțelegere și pentru gestul frumos!",
+  },
+  "gifts.viewProduct": {
+    en: "View product",
+    ro: "Vezi produsul",
+  },
+  "gifts.chooseGift": {
+    en: "Reserve gift",
+    ro: "Alege cadoul",
+  },
+  "gifts.guestNamePlaceholder": {
+    en: "Your full name",
+    ro: "Numele complet",
+  },
+  "gifts.nameRequiredTitle": {
+    en: "Name required",
+    ro: "Numele este necesar",
+  },
+  "gifts.nameRequiredDesc": {
+    en: "Please enter your name so we know who reserved the gift.",
+    ro: "Introduceți numele pentru a ști cine a rezervat cadoul.",
+  },
+  "gifts.claimSuccessTitle": {
+    en: "Thank you!",
+    ro: "Mulțumim!",
+  },
+  "gifts.claimSuccessDesc": {
+    en: "The gift is reserved. We are grateful for your thoughtfulness.",
+    ro: "Cadoul a fost rezervat. Vă mulțumim pentru gestul vostru.",
+  },
+  "gifts.allClaimed": {
+    en: "Everything in this list has already been reserved. Thank you!",
+    ro: "Tot ce era în această listă a fost deja rezervat. Mulțumim!",
   },
 
   // ==================== DressCode ====================
   "details.dressCode": {
-    en: "Dresscode",
-    ro: "Dresscode",
+    en: "Dress Code",
+    ro: "Dress code",
   },
   "details.dressCode.ladiesHeading": {
     en: "For ladies",
     ro: "Pentru doamne",
   },
   "details.dressCode.gentlemenHeading": {
-    en: "For gentleman",
+    en: "For gentlemen",
     ro: "Pentru bărbați",
   },
   "details.dressCode.ladiesBody": {

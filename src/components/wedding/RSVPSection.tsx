@@ -95,7 +95,7 @@ const RSVPSection = () => {
   };
 
   return (
-    <section ref={ref} id="rsvp" className="py-16 md:py-24 px-6 md:px-12 bg-background">
+    <section ref={ref} id="rsvp" className="px-6 pb-16 pt-8 md:px-12 md:pb-24 md:pt-10 bg-background">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -104,11 +104,11 @@ const RSVPSection = () => {
           className="text-center mb-12"
         >
           <p className="decorative-flourish mb-4">✉</p>
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
+          <h2 className="section-title section-title--rsvp mb-4">
             {t("rsvp.title")}
           </h2>
           <div className="decorative-line mb-6" />
-          <p className="text-muted-foreground font-light">
+          <p className="section-body font-light opacity-90">
             {t("rsvp.deadline")}
           </p>
         </motion.div>
