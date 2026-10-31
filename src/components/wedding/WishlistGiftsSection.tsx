@@ -1,22 +1,28 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import giftIcon from "@/assets/gift-icon.svg";
 import { useTranslation } from "@/i18n/LanguageContext";
-import GiftListDialog from "@/components/wedding/GiftListDialog";
+
+const giftIdeaKeys = [
+  "gifts.idea1",
+  "gifts.idea2",
+  "gifts.idea3",
+  "gifts.idea4",
+  "gifts.idea5",
+  "gifts.idea6",
+] as const;
 
 const WishlistGiftsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t } = useTranslation();
-  const [listOpen, setListOpen] = useState(false);
 
   return (
     <section
       ref={ref}
       id="gifts"
       aria-labelledby="gifts-heading"
-      className="gifts-section px-6 pb-10 pt-6 md:px-12 md:pb-12 md:pt-8"
+      className="gifts-section px-6 pb-8 pt-4 md:px-12 md:pb-10 md:pt-6"
     >
       <div className="mx-auto max-w-xl text-center">
         <motion.div
@@ -34,27 +40,20 @@ const WishlistGiftsSection = () => {
             {t("gifts.title")}
           </h2>
 
-          <div className="section-body mx-auto mt-8 max-w-md space-y-6 font-light">
-            <p>{t("gifts.body")}</p>
-            <p>{t("gifts.bodyHousehold")}</p>
+          <div className="mt-6">
+            <p className="dresscode__text">{t("gifts.intro")}</p>
+            <ul className="dresscode__list">
+              {giftIdeaKeys.map((key) => (
+                <li key={key}>{t(key)}</li>
+              ))}
+            </ul>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setListOpen(true)}
-            className="btn-pearl-outline mt-10 px-8 py-3 text-xs uppercase tracking-[0.22em]"
-          >
-            {t("gifts.openList")}
-            <ArrowUpRight className="h-4 w-4" />
-          </button>
-
-          <p className="section-body mx-auto mt-10 max-w-lg border-t border-primary/15 pt-8 text-base font-light opacity-90">
+          <p className="dresscode__text mx-auto mt-8 max-w-md border-t border-primary/15 pt-6 opacity-90">
             {t("gifts.adultsOnly")}
           </p>
         </motion.div>
       </div>
-
-      <GiftListDialog open={listOpen} onOpenChange={setListOpen} />
     </section>
   );
 };

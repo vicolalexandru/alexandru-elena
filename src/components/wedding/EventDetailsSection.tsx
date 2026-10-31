@@ -7,7 +7,18 @@ import guestsIcon from "@/assets/program-icon-guests.svg";
 import ceremonyIcon from "@/assets/program-icon-ceremony.svg";
 import { useTranslation } from "@/i18n/LanguageContext";
 
-const ladiesDressColors = ["#EEDC9A", "#E1B1B8", "#A4AC86", "#A7C2D1", "#CDB5D9"];
+/** Roz pudrat, Lila pudrat, Albastru cer — mai deschis / original / mai închis */
+const ladiesDressColors = [
+  "#EFD3D9",
+  "#EAC9D0",
+  "#DEB4BA",
+  "#DDD2DF",
+  "#D3C8D7",
+  "#C8B9CE",
+  "#D4E3F3",
+  "#C5D9EE",
+  "#B4CDE8",
+];
 
 const gentlemenDressColors = ["#1A1A1A", "#1D2941", "#493628"];
 
@@ -34,14 +45,14 @@ const EventDetailsSection = () => {
       ref={ref}
       id="details"
       aria-labelledby="details-heading"
-      className="moodboard-surface px-6 pb-8 pt-16 md:px-12 md:pb-10 md:pt-24"
+      className="moodboard-surface px-6 pb-6 pt-12 md:px-12 md:pb-8 md:pt-16"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-10 text-center md:mb-12"
+          className="mb-8 text-center md:mb-10"
         >
           <h2 id="details-heading" className="section-kicker">
             {t("details.title")}
@@ -53,7 +64,7 @@ const EventDetailsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12 md:mb-16"
+          className="mb-10 md:mb-12"
         >
           <div className="relative -mx-6 overflow-hidden md:mx-0 md:aspect-[16/9] md:min-h-[320px]">
             <img
@@ -86,7 +97,7 @@ const EventDetailsSection = () => {
                   }}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-foreground text-sm font-sans uppercase tracking-wide">{t("details.getDirections")}</span>
+                    <span className="text-foreground text-sm font-sans tracking-wide">{t("details.getDirections")}</span>
                     <ArrowRight className="w-4 h-4 text-foreground group-hover:translate-x-1 transition-transform" />
                   </div>
                   <div className="w-px h-5 bg-gray-300" />
@@ -101,7 +112,7 @@ const EventDetailsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="program-timing mb-16"
+          className="program-timing mb-10 md:mb-12"
         >
           <h3 className="section-kicker program-timing__kicker">{t("details.program.kicker")}</h3>
           <div className="program-timing__grid">
@@ -121,7 +132,7 @@ const EventDetailsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="dresscode max-w-xl mx-auto pt-4"
+          className="dresscode max-w-xl mx-auto"
         >
           <h3 className="section-kicker dresscode__title">{t("details.dressCode")}</h3>
 

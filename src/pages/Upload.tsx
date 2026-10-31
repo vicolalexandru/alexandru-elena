@@ -46,7 +46,7 @@ const Upload = () => {
           <h1 className="font-serif text-2xl md:text-3xl text-primary">
             {t("photos.title")}
           </h1>
-          <div className="w-24" /> {/* Spacer for centering */}
+          <div className="w-24" aria-hidden="true" />
         </div>
       </motion.div>
 

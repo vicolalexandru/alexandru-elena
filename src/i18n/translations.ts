@@ -90,8 +90,8 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Confirmare prezență",
   },
   "rsvp.deadline": {
-    en: "Please respond by May 15, 2027",
-    ro: "Vă rugăm să răspundeți până pe 15 Mai 2027",
+    en: "Please respond by May 1, 2027",
+    ro: "Vă rugăm să răspundeți până pe 1 Mai 2027",
   },
   "rsvp.fullName": {
     en: "Full Name",
@@ -130,16 +130,16 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "(Opțional)",
   },
   "rsvp.declinePlaceholder": {
-    en: "Please let us know why you can't make it (minimum 200 characters)...",
-    ro: "Vă rugăm să ne spuneți de ce nu puteți ajunge (minimum 200 de caractere)...",
+    en: "Please let us know why you can't make it (minimum {min} characters)...",
+    ro: "Vă rugăm să ne spuneți de ce nu puteți ajunge (minimum {min} de caractere)...",
   },
   "rsvp.messagePlaceholder": {
     en: "Share your thoughts, wishes, or special memories...",
     ro: "Împărtășiți-ne gândurile, urările sau amintirile speciale...",
   },
   "rsvp.charCount": {
-    en: "/200 characters",
-    ro: "/200 caractere",
+    en: "/{min} characters",
+    ro: "/{min} caractere",
   },
   "rsvp.submit": {
     en: "Send confirmation",
@@ -174,10 +174,6 @@ export const translations: Record<string, { en: string; ro: string }> = {
   "footer.message": {
     en: "We can't wait to share this special day together.\nWith love,",
     ro: "Abia așteptăm să trăim împreună\naceastă zi specială.\nCu drag,",
-  },
-  "footer.contact": {
-    en: "For questions, please contact:",
-    ro: "Pentru întrebări, vă rugăm să ne contactați:",
   },
 
   // ==================== EnvelopeOverlay ====================
@@ -292,89 +288,37 @@ export const translations: Record<string, { en: string; ro: string }> = {
     en: "Gifts",
     ro: "Daruri",
   },
-  "gifts.body": {
-    en: "Your presence is the most beautiful gift for us. If you would like to give us something extra, instead of flowers, which wilt quickly, we would be happier with a good bottle of wine, a book with a message from you, or a small meaningful object.",
-    ro: "Prezența voastră este cel mai frumos cadou pentru noi. Dacă doriți să ne oferiți ceva în plus, în loc de flori, care se ofilesc repede, ne-ar bucura mai mult o sticlă de vin bun, o carte cu un mesaj din partea voastră sau un mic obiect cu semnificație.",
+  "gifts.intro": {
+    en: "Instead of flowers, we would appreciate:",
+    ro: "În loc de flori, vom aprecia:",
   },
-  "gifts.bodyHousehold": {
-    en: "If you would like to give us a small useful gift for our home, we have prepared a short selection of appliances you can view here:",
-    ro: "Dacă dorești să ne oferi un mic cadou util pentru casă, am pregătit o scurtă selecție de electrocasnice pe care le poți vedea aici:",
+  "gifts.idea1": {
+    en: "Special drinks, aromatic teas, or matcha",
+    ro: "Băuturi deosebite, ceaiuri aromatice sau matcha",
   },
-  "gifts.openList": {
-    en: "See gift ideas",
-    ro: "Vezi ideile de cadouri",
+  "gifts.idea2": {
+    en: "Social and family games",
+    ro: "Jocuri sociale și de familie",
+  },
+  "gifts.idea3": {
+    en: "Personal development books",
+    ro: "Cărți de dezvoltare personală",
+  },
+  "gifts.idea4": {
+    en: "Vouchers for online stores",
+    ro: "Vouchere pentru magazine online",
+  },
+  "gifts.idea5": {
+    en: "Beauty, wellness, or spa treatments",
+    ro: "Proceduri de frumusețe, wellness sau spa",
+  },
+  "gifts.idea6": {
+    en: "Unique experiences and unforgettable memories",
+    ro: "Experiențe unice și amintiri de neuitat",
   },
   "gifts.adultsOnly": {
-    en: "To keep the authentic La Dolce Vita atmosphere, our evening is for adults only — a perfect occasion to relax and celebrate.",
-    ro: "Pentru a păstra atmosfera autentică La Dolce Vita, seara noastră este dedicată exclusiv adulților – o ocazie perfectă de relaxare și distracție.",
-  },
-  "gifts.listEyebrow": {
-    en: "Gift ideas",
-    ro: "Idei de cadouri",
-  },
-  "gifts.categoriesHeading": {
-    en: "Choose a list",
-    ro: "Alege o listă",
-  },
-  "gifts.listIntro": {
-    en: "We grouped a few things for our home that would truly help us. Pick a category to see what is still available.",
-    ro: "Am grupat câteva lucruri pentru casa noastră care ne-ar fi cu adevărat de folos. Alege o categorie pentru a vedea ce mai este disponibil.",
-  },
-  "gifts.itemsAvailable": {
-    en: "{n} available",
-    ro: "{n} disponibile",
-  },
-  "gifts.categoryFull": {
-    en: "All reserved",
-    ro: "Toate rezervate",
-  },
-  "gifts.backToCategories": {
-    en: "All lists",
-    ro: "Toate listele",
-  },
-  "gifts.listTitle": {
-    en: "Gift List",
-    ro: "Lista de daruri",
-  },
-  "gifts.close": {
-    en: "Close",
-    ro: "Închide",
-  },
-  "gifts.listDisclaimer": {
-    en: "Please choose a gift only if you truly wish to give it. After you reserve it, it will disappear from the list for other guests. Thank you in advance for your understanding and kindness!",
-    ro: "Vă rugăm să alegeți cadoul doar dacă doriți cu adevărat să îl dăruiți. După selectare, acesta va dispărea din listă și nu va mai putea fi ales de alți invitați. Vă mulțumim anticipat pentru înțelegere și pentru gestul frumos!",
-  },
-  "gifts.viewProduct": {
-    en: "View product",
-    ro: "Vezi produsul",
-  },
-  "gifts.chooseGift": {
-    en: "Reserve gift",
-    ro: "Alege cadoul",
-  },
-  "gifts.guestNamePlaceholder": {
-    en: "Your full name",
-    ro: "Numele complet",
-  },
-  "gifts.nameRequiredTitle": {
-    en: "Name required",
-    ro: "Numele este necesar",
-  },
-  "gifts.nameRequiredDesc": {
-    en: "Please enter your name so we know who reserved the gift.",
-    ro: "Introduceți numele pentru a ști cine a rezervat cadoul.",
-  },
-  "gifts.claimSuccessTitle": {
-    en: "Thank you!",
-    ro: "Mulțumim!",
-  },
-  "gifts.claimSuccessDesc": {
-    en: "The gift is reserved. We are grateful for your thoughtfulness.",
-    ro: "Cadoul a fost rezervat. Vă mulțumim pentru gestul vostru.",
-  },
-  "gifts.allClaimed": {
-    en: "Everything in this list has already been reserved. Thank you!",
-    ro: "Tot ce era în această listă a fost deja rezervat. Mulțumim!",
+    en: "We want you to enjoy this day to the fullest, so we encourage you to leave your little ones in the care of loved ones and come celebrate with us.",
+    ro: "Ne dorim să vă bucurați din plin de această zi, așa că vă încurajăm să lăsați micuții în grija celor dragi și să veniți să sărbătorim împreună.",
   },
 
   // ==================== DressCode ====================
@@ -391,8 +335,8 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Pentru bărbați",
   },
   "details.dressCode.ladiesBody": {
-    en: "Floor-length gowns or elegant full-length dresses are kindly requested. Preferred palette: champagne, dusty rose, sage, dusty blue, and lavender.",
-    ro: "Vă rugăm rochii de seară lungi sau rochii elegante până la glezne. Paleta preferată: champagne, roz praf, salvie, albastru praf și lavandă.",
+    en: "Please respect the colour palette we have shared, choosing pastel shades and avoiding dark or very bright colours. Preferred palette: pastel pink, powder lilac, sky blue.",
+    ro: "Vă rugăm să respectați paleta cromatică transmisă de noi, optând pentru nuanțe pastelate și evitând culorile închise sau foarte aprinse. Paleta preferată: roz pastel, lila pudrat, albastru cer.",
   },
   "details.dressCode.gentlemenBody": {
     en: "Tailored suits with a white or beige shirt. Preferred palette: black, dark navy, or dark brown.",
@@ -465,16 +409,6 @@ export const translations: Record<string, { en: string; ro: string }> = {
   "hero.saveTheDate": {
     en: "Save the Date",
     ro: "Salvează data",
-  },
-
-  // ==================== MusicToggle ====================
-  "music.play": {
-    en: "Play music",
-    ro: "Pornește muzica",
-  },
-  "music.pause": {
-    en: "Pause music",
-    ro: "Oprește muzica",
   },
 
   // ==================== NotFound ====================

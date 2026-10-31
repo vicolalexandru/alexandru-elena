@@ -1,73 +1,42 @@
-# Welcome to your Lovable project
+# Alexandru & Elena — wedding site
 
-## Project info
+Invitation website for Alexandru and Elena (June 27, 2027 · Lago Event Park, Chișinău).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Local development
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires [Node.js](https://nodejs.org/) (LTS recommended).
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server runs at [http://localhost:8080](http://localhost:8080).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+|--------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+| `npm run test` | Run Vitest |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Production site
 
-## What technologies are used for this project?
+Built for GitHub Pages with base path `/alexandru-elena/` (see `vite.config.ts`).
 
-This project is built with:
+Live site: [https://vicolalexandru.github.io/alexandru-elena/](https://vicolalexandru.github.io/alexandru-elena/)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Deploy: `npm run build`, then push — GitHub Actions publishes `dist/` when configured.
 
-## How can I deploy this project?
+## Stack
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Vite · React · TypeScript
+- Tailwind CSS · shadcn/ui
+- Framer Motion
 
-## Can I connect a custom domain to my Lovable project?
+## RSVP & integrations
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+See [RSVP_SETUP.md](./RSVP_SETUP.md) for Google Sheets RSVP wiring. See [INTERACTIVE_SETUP.md](./INTERACTIVE_SETUP.md) and [google-apps-script/](./google-apps-script/) for photo upload and other scripts.

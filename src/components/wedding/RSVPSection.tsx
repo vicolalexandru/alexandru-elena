@@ -9,6 +9,8 @@ const CHILD_AGE_KEYS = ["under7", "7to12", "over12"] as const;
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycby1WlhZ9TqHitSVe7TC7Qj5fnI9MLvhwrj7viJWuh8IW8GsRHd76SyosyrJrWgn9qemaQ/exec";
 
+const DECLINE_ESSAY_MIN_LENGTH = 150;
+
 const RSVPSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -95,19 +97,19 @@ const RSVPSection = () => {
   };
 
   return (
-    <section ref={ref} id="rsvp" className="moodboard-surface px-6 pb-16 pt-8 md:px-12 md:pb-24 md:pt-10">
+    <section ref={ref} id="rsvp" className="moodboard-surface px-6 pb-12 pt-6 md:px-12 md:pb-16 md:pt-8">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-10"
         >
           <h2 className="section-title section-title--rsvp mb-4">
             {t("rsvp.title")}
           </h2>
           <div className="decorative-line mb-6" />
-          <p className="section-body font-light opacity-90">
+          <p className="dresscode__text max-w-md opacity-90">
             {t("rsvp.deadline")}
           </p>
         </motion.div>
@@ -324,15 +326,24 @@ const RSVPSection = () => {
               name="essay"
               rows={4}
               required={formData.attending === "no"}
-              minLength={formData.attending === "no" ? 200 : undefined}
+              minLength={formData.attending === "no" ? DECLINE_ESSAY_MIN_LENGTH : undefined}
               value={formData.essay}
               onChange={handleChange}
-              placeholder={formData.attending === "no" ? t("rsvp.declinePlaceholder") : t("rsvp.messagePlaceholder")}
+              placeholder={
+                formData.attending === "no"
+                  ? t("rsvp.declinePlaceholder", { min: String(DECLINE_ESSAY_MIN_LENGTH) })
+                  : t("rsvp.messagePlaceholder")
+              }
               className="form-field resize-none"
             />
-            {formData.attending === "no" && formData.essay.length > 0 && formData.essay.length < 200 && (
-              <p className="text-sm text-muted-foreground mt-1">{formData.essay.length}{t("rsvp.charCount")}</p>
-            )}
+            {formData.attending === "no" &&
+              formData.essay.length > 0 &&
+              formData.essay.length < DECLINE_ESSAY_MIN_LENGTH && (
+                <p className="text-sm text-muted-foreground mt-1">
+                  {formData.essay.length}
+                  {t("rsvp.charCount", { min: String(DECLINE_ESSAY_MIN_LENGTH) })}
+                </p>
+              )}
           </div>
 
           <div className="text-center pt-4">

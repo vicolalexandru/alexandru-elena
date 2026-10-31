@@ -6,13 +6,13 @@ import { useTranslation } from "@/i18n/LanguageContext";
 const generateICS = () => {
   const ics = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Alexandru & Elena Wedding//EN
+PRODID:-//Alexandru & Elena Nuntă//EN
 BEGIN:VEVENT
-DTSTART:20270627T170000
+DTSTART:20270627T163000
 DTEND:20270628T010000
-SUMMARY:Alexandru & Elena Wedding
-LOCATION:Lago Event Park, Sicily hall, Dănceni, Chișinău
-DESCRIPTION:Join us for our wedding celebration at Lago Event Park.
+SUMMARY:Alexandru & Elena Nuntă
+LOCATION:Lago Event Park, sala Sicilia, Dănceni, Chișinău
+DESCRIPTION:Vă așteptăm cu drag la celebrarea nunții noastre la Lago Event Park, sala Sicilia, Dănceni, Chișinău.
 END:VEVENT
 END:VCALENDAR`;
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
