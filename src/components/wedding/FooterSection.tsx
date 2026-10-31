@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "@/i18n/LanguageContext";
+import pearlShellIcon from "@/assets/cursor-shell.svg";
 import LanguageToggle from "@/components/LanguageToggle";
 
 const FooterSection = () => {
@@ -31,7 +32,7 @@ const FooterSection = () => {
           <div className="flex items-center justify-center gap-2 text-muted-foreground mb-6">
             <span className="h-px w-12 bg-border" />
             <img
-              src="/cursor-shell.svg"
+              src={pearlShellIcon}
               alt=""
               className="footer-pearl"
               width={22}

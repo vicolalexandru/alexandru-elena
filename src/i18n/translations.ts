@@ -16,35 +16,10 @@ export const translations: Record<string, { en: string; ro: string }> = {
     en: "Confirm",
     ro: "Confirmă",
   },
-  // ==================== CountdownSection ====================
-  "countdown.title": {
-    en: "Counting Down to Forever",
-    ro: "Numărătoarea inversă",
-  },
-  "countdown.days": {
-    en: "Days",
-    ro: "Zile",
-  },
-  "countdown.hours": {
-    en: "Hours",
-    ro: "Ore",
-  },
-  "countdown.minutes": {
-    en: "Minutes",
-    ro: "Minute",
-  },
-  "countdown.seconds": {
-    en: "Seconds",
-    ro: "Secunde",
-  },
-  "countdown.untilIDo": {
-    en: 'Until we say "I do"',
-    ro: 'Până când spunem "Da"',
-  },
 
   // ==================== EventDetailsSection ====================
   "details.title": {
-    en: "Wedding Details",
+    en: "Wedding details",
     ro: "Detalii nuntă",
   },
   "details.venueName": {
@@ -64,7 +39,7 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Lago Event Park, sala Sicilia",
   },
   "details.program.kicker": {
-    en: "The Day's Program",
+    en: "The day's program",
     ro: "Programul zilei",
   },
   "details.program.arrival": {
@@ -94,15 +69,15 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Vă rugăm să răspundeți până pe 1 Mai 2027",
   },
   "rsvp.fullName": {
-    en: "Full Name",
+    en: "Full name",
     ro: "Nume complet",
   },
   "rsvp.email": {
-    en: "Email Address",
+    en: "Email address",
     ro: "Adresă de email",
   },
   "rsvp.phone": {
-    en: "Phone Number",
+    en: "Phone number",
     ro: "Număr de telefon",
   },
   "rsvp.attending": {
@@ -118,7 +93,7 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "Din păcate, nu pot ajunge",
   },
   "rsvp.messageLabel": {
-    en: "Message for the Couple",
+    en: "Message for the couple",
     ro: "Mesaj pentru cuplu",
   },
   "rsvp.required": {
@@ -293,16 +268,16 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "În loc de flori, vom aprecia:",
   },
   "gifts.idea1": {
-    en: "Special drinks, aromatic teas, or matcha",
-    ro: "Băuturi deosebite, ceaiuri aromatice sau matcha",
+    en: "Special drinks, matcha, or aromatic teas",
+    ro: "Băuturi deosebite, matcha sau ceaiuri aromatice",
   },
   "gifts.idea2": {
     en: "Social and family games",
     ro: "Jocuri sociale și de familie",
   },
   "gifts.idea3": {
-    en: "Personal development books",
-    ro: "Cărți de dezvoltare personală",
+    en: "Books (including for children)",
+    ro: "Cărți (inclusiv pentru copii)",
   },
   "gifts.idea4": {
     en: "Vouchers for online stores",
@@ -323,7 +298,7 @@ export const translations: Record<string, { en: string; ro: string }> = {
 
   // ==================== DressCode ====================
   "details.dressCode": {
-    en: "Dress Code",
+    en: "Dress code",
     ro: "Dress code",
   },
   "details.dressCode.ladiesHeading": {
@@ -345,7 +320,7 @@ export const translations: Record<string, { en: string; ro: string }> = {
 
   // ==================== RSVP Extra Fields ====================
   "rsvp.numberOfGuests": {
-    en: "Number of Guests (including yourself)",
+    en: "Number of guests (including yourself)",
     ro: "Număr de invitați (inclusiv tu)",
   },
   "rsvp.withChildren": {
@@ -372,39 +347,7 @@ export const translations: Record<string, { en: string; ro: string }> = {
     en: "Over 12",
     ro: "Peste 12 ani",
   },
-  "rsvp.dietaryRestrictions": {
-    en: "Dietary Restrictions",
-    ro: "Restricții alimentare",
-  },
-  "rsvp.dietaryNone": {
-    en: "None",
-    ro: "Niciuna",
-  },
-  "rsvp.dietaryVegetarian": {
-    en: "Vegetarian",
-    ro: "Vegetarian",
-  },
-  "rsvp.dietaryVegan": {
-    en: "Vegan",
-    ro: "Vegan",
-  },
-  "rsvp.dietaryGlutenFree": {
-    en: "Gluten-free",
-    ro: "Fără gluten",
-  },
-  "rsvp.dietaryLactoseIntolerant": {
-    en: "Lactose intolerant",
-    ro: "Intoleranță la lactoză",
-  },
-  "rsvp.dietaryOther": {
-    en: "Other",
-    ro: "Altele",
-  },
-  "rsvp.dietaryPlaceholder": {
-    en: "Please specify...",
-    ro: "Vă rugăm specificați...",
-  },
-
+  
   // ==================== SaveTheDate ====================
   "hero.saveTheDate": {
     en: "Save the Date",

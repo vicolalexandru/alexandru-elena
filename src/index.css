@@ -81,7 +81,7 @@
   html,
   body,
   body :is(a, button, label, input, textarea, select, summary, [role="button"]) {
-    cursor: url("/cursor-shell.svg") 16 26, auto;
+    cursor: url("./assets/cursor-shell.svg") 16 26, auto;
   }
 
   body {
@@ -574,8 +574,20 @@
     list-style: none;
   }
 
-  .dresscode__swatches--ladies {
-    flex-wrap: wrap;
+  .dresscode__swatches-stack--ladies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0 0;
+  }
+
+  .dresscode__swatches-stack--ladies .dresscode__swatches {
+    margin: 0;
+  }
+
+  .dresscode__swatches--ladies-row {
+    flex-wrap: nowrap;
     gap: 10px;
   }
 

@@ -20,6 +20,8 @@ const ladiesDressColors = [
   "#B4CDE8",
 ];
 
+const ladiesDressColorRows = [ladiesDressColors.slice(0, 6), ladiesDressColors.slice(6, 9)];
+
 const gentlemenDressColors = ["#1A1A1A", "#1D2941", "#493628"];
 
 const EventDetailsSection = () => {
@@ -139,13 +141,21 @@ const EventDetailsSection = () => {
           <div className="dresscode__block">
             <p className="dresscode__heading">{t("details.dressCode.ladiesHeading")}</p>
             <p className="dresscode__text">{t("details.dressCode.ladiesBody")}</p>
-            <ul className="dresscode__swatches dresscode__swatches--ladies" aria-label={t("details.dressCode.ladiesHeading")}>
-              {ladiesDressColors.map((color) => (
-                <li key={color}>
-                  <span className="dresscode__dot" style={{ backgroundColor: color }} aria-hidden="true" />
-                </li>
+            <div
+              className="dresscode__swatches-stack dresscode__swatches-stack--ladies"
+              role="group"
+              aria-label={t("details.dressCode.ladiesHeading")}
+            >
+              {ladiesDressColorRows.map((row) => (
+                <ul key={row.join("-")} className="dresscode__swatches dresscode__swatches--ladies-row">
+                  {row.map((color) => (
+                    <li key={color}>
+                      <span className="dresscode__dot" style={{ backgroundColor: color }} aria-hidden="true" />
+                    </li>
+                  ))}
+                </ul>
               ))}
-            </ul>
+            </div>
           </div>
 
           <div className="dresscode__block">
