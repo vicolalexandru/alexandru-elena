@@ -590,11 +590,6 @@
     border-radius: 9999px;
   }
 
-  .dresscode__swatches--ladies .dresscode__dot {
-    width: 40px;
-    height: 40px;
-  }
-
   @media (max-width: 480px) {
     .dresscode__title {
       margin-bottom: 32px;
@@ -621,11 +616,6 @@
     .dresscode__dot {
       width: 38px;
       height: 38px;
-    }
-
-    .dresscode__swatches--ladies .dresscode__dot {
-      width: 34px;
-      height: 34px;
     }
 
     .program-timing__grid {
