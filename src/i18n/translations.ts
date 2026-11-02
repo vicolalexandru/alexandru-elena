@@ -268,8 +268,8 @@ export const translations: Record<string, { en: string; ro: string }> = {
     ro: "În loc de flori, vom aprecia:",
   },
   "gifts.idea1": {
-    en: "Special drinks, matcha, or aromatic teas",
-    ro: "Băuturi deosebite, matcha sau ceaiuri aromatice",
+    en: "Special drinks, champagne, matcha, or aromatic teas",
+    ro: "Băuturi deosebite, șampanie, matcha sau ceaiuri aromatice",
   },
   "gifts.idea2": {
     en: "Social and family games",

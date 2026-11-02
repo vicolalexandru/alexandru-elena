@@ -20,7 +20,11 @@ const ladiesDressColors = [
   "#B4CDE8",
 ];
 
-const ladiesDressColorRows = [ladiesDressColors.slice(0, 6), ladiesDressColors.slice(6, 9)];
+const ladiesDressColorRows = [
+  ladiesDressColors.slice(0, 3),
+  ladiesDressColors.slice(3, 6),
+  ladiesDressColors.slice(6, 9),
+];
 
 const gentlemenDressColors = ["#1A1A1A", "#1D2941", "#493628"];
 

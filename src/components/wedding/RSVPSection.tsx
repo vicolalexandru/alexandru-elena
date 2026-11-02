@@ -9,7 +9,7 @@ const CHILD_AGE_KEYS = ["under7", "7to12", "over12"] as const;
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycby1WlhZ9TqHitSVe7TC7Qj5fnI9MLvhwrj7viJWuh8IW8GsRHd76SyosyrJrWgn9qemaQ/exec";
 
-const DECLINE_ESSAY_MIN_LENGTH = 150;
+const DECLINE_ESSAY_MIN_LENGTH = 100;
 
 const RSVPSection = () => {
   const ref = useRef(null);
