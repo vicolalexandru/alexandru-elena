@@ -295,6 +295,10 @@ export const translations: Record<string, { en: string; ro: string }> = {
     en: "We want you to enjoy this day to the fullest, so we encourage you to leave your little ones in the care of loved ones and come celebrate with us.",
     ro: "Ne dorim să vă bucurați din plin de această zi, așa că vă încurajăm să lăsați micuții în grija celor dragi și să veniți să sărbătorim împreună.",
   },
+  "gifts.accommodation": {
+    en: "For accommodation, you can book a hotel room at Lago Event Park or at other hotels in Chișinău.",
+    ro: "Pentru cazare, e posibil de închiriat o cameră de hotel la Lago Event Park sau la alte hotele din Chișinău.",
+  },
 
   // ==================== DressCode ====================
   "details.dressCode": {

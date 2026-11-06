@@ -52,6 +52,10 @@ const WishlistGiftsSection = () => {
           <p className="dresscode__text mx-auto mt-8 max-w-md border-t border-primary/15 pt-6 opacity-90">
             {t("gifts.adultsOnly")}
           </p>
+
+          <p className="dresscode__text mx-auto mt-6 max-w-md border-t border-primary/15 pt-6 opacity-90">
+            {t("gifts.accommodation")}
+          </p>
         </motion.div>
       </div>
     </section>
